@@ -1,0 +1,8 @@
+paddleocr
+opencv-python
+scikit-learn
+streamlit
+pandas
+numpy
+joblib
+pillow
