@@ -36,10 +36,6 @@ for filename in os.listdir(folder):
     if vendor:
         vendor = vendor.strip().upper()
 
-    # ------------------------
-    # Date extraction
-    # ------------------------
-
     date = None
 
     date_patterns = [
@@ -90,5 +86,6 @@ for filename in os.listdir(folder):
 
 df = pd.DataFrame(features)
 df.to_csv("findit2_features.csv", index=False)
+
 
 print("Feature extraction completed.")
