@@ -80,3 +80,11 @@ solution = DocFusionSolution()
 model_dir = solution.train("data/train", "model")
 
 solution.predict(model_dir, "data/test", "predictions.jsonl")
+
+---
+
+# Environment
+
+Python version: 3.13+
+
+Dependencies are listed in `requirements.txt`.
