@@ -14,7 +14,7 @@ The goal is to build an intelligent document processing pipeline that can:
 
 The system processes scanned receipts using the following pipeline:
 
-Receipt Image ->  OCR (PaddleOCR) -> Text & Feature Extraction -> Machine Learning Model (Random Forest) -> Forgery Prediction  
+Receipt Image → OCR (PaddleOCR) → Text & Feature Extraction → Machine Learning Model (Random Forest) → Forgery Prediction
 
 ---
 
@@ -22,9 +22,9 @@ Receipt Image ->  OCR (PaddleOCR) -> Text & Feature Extraction -> Machine Learni
 
 The system extracts the following structured data:
 
-- **Vendor** – merchant or company name
-- **Date** – transaction date
-- **Total** – final receipt amount
+- **Vendor** – merchant or company name  
+- **Date** – transaction date  
+- **Total** – final receipt amount  
 
 Additional features used for anomaly detection:
 
@@ -66,7 +66,17 @@ Used to test robustness against different layouts and noise.
 
 # Running the Pipeline
 
-Train the model and generate predictions:
+The solution follows the required interface defined by the challenge harness.
 
-```bash
-python test_sol.py
+Training and prediction are handled through the `DocFusionSolution` class in **solution.py**.
+
+Example usage:
+
+```python
+from solution import DocFusionSolution
+
+solution = DocFusionSolution()
+
+model_dir = solution.train("data/train", "model")
+
+solution.predict(model_dir, "data/test", "predictions.jsonl")
