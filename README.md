@@ -80,7 +80,7 @@ solution = DocFusionSolution()
 model_dir = solution.train("data/train", "model")
 
 solution.predict(model_dir, "data/test", "predictions.jsonl")
-
+```
 ---
 
 # Environment
